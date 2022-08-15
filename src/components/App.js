@@ -1,8 +1,13 @@
 import React, {useReducer} from 'react';
-
 import './App.css';
 import reducer, {initialState, calculateResult} from '/Users/aaronrobinson/web3/web-module-project-reducer/src/reducers/index.js'
-import { addOne, applyNumber, changeOperation, clearDisplay,saveMemory, applyMemory, clearMemory} from '../actions';
+import {applyNumber, 
+        changeOperation, 
+        clearDisplay,
+        saveMemory, 
+        applyMemory, 
+        clearMemory
+       } from '../actions';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
