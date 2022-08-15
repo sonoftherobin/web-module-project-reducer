@@ -2,6 +2,7 @@ import React, {useReducer} from 'react';
 
 import './App.css';
 import reducer, {initialState, calculateResult} from '/Users/aaronrobinson/web3/web-module-project-reducer/src/reducers/index.js'
+import { addOne } from '../actions';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
@@ -19,10 +20,8 @@ function App() {
             
             <TotalDisplay value={state.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
-              <h1>hi
-              </h1>
+              <span id="operation"><b>Operation:</b> {state.operation}</span>
+              <span id="memory"><b>Memory:</b> {state.memory}</span>
             </div>
             
             <div className="row">
@@ -32,7 +31,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton value={1} onClick ={() =>{dispatch(addOne())}}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
