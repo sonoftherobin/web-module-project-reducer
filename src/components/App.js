@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 
 import './App.css';
 import reducer, {initialState, calculateResult} from '/Users/aaronrobinson/web3/web-module-project-reducer/src/reducers/index.js'
-import { addOne, applyNumber, changeOperation, clearDisplay,saveMemory} from '../actions';
+import { addOne, applyNumber, changeOperation, clearDisplay,saveMemory, applyMemory, clearMemory} from '../actions';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
@@ -26,8 +26,8 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick ={()=>dispatch(saveMemory(state.total))}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MR"} onClick ={()=>dispatch(applyMemory(state.memory))}/>
+              <CalcButton value={"MC"} onClick ={()=>dispatch(clearMemory(0))}/>
             </div>
 
             <div className="row">
